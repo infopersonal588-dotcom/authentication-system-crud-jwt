@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://authentication-system-crud-jwt.onrender.com/',
+  baseURL: 'https://authentication-system-crud-jwt.onrender.com/api',
 });
 
 api.interceptors.request.use((config) => {
