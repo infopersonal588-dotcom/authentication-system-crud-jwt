@@ -1,0 +1,261 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0b1120;
+  color: #f5f7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(110, 98, 255, 0.16), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(18, 255, 231, 0.12), transparent 25%),
+    #0b1120;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1.25rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(16, 23, 45, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  padding: 2rem;
+  color: #f5f7ff;
+}
+
+.section-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.input-group,
+.note-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.95rem;
+  color: #d2d7ff;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.95rem 1rem;
+  color: #eef2ff;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(110, 98, 255, 0.75);
+  box-shadow: 0 0 0 4px rgba(110, 98, 255, 0.12);
+}
+
+button {
+  border: none;
+  background: linear-gradient(135deg, #7c5bff, #40d0fc);
+  color: #0b1120;
+  font-weight: 700;
+  padding: 0.95rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+button.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #eef2ff;
+}
+
+button.danger {
+  background: #ff4c71;
+  color: #fff;
+}
+
+.loader {
+  width: 54px;
+  height: 54px;
+  border: 6px solid rgba(255, 255, 255, 0.14);
+  border-top-color: #7c5bff;
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+small {
+  color: #b8befb;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #eef2ff;
+  text-decoration: none;
+}
+
+.nav-link {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.grid-2 {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.list-gap {
+  display: grid;
+  gap: 1rem;
+}
+
+.note-card {
+  padding: 1.25rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 16, 36, 0.8);
+}
+
+.note-card h3 {
+  margin: 0 0 0.75rem;
+}
+
+.note-card p {
+  margin: 0 0 1rem;
+  color: #dce1ff;
+  line-height: 1.5;
+}
+
+.note-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #9fb7ff;
+}
+
+@media (max-width: 860px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Footer styles */
+.site-footer {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #cfe3ff;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  font-size: 0.95rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.site-footer .footer-left {
+  font-weight: 600;
+}
+
+.site-footer .footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reversed {
+  display: inline-block;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.sr-only {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;}
+
+@media (max-width: 640px) {
+  .site-footer {flex-direction: column; align-items: flex-start; gap: 0.5rem;}
+}
